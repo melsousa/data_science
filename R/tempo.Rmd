@@ -1,0 +1,21 @@
+```{r}
+dados = read.csv('tempo.csv', sep =';',na.strings = "", stringsAsFactors = T)
+head(dados)
+```
+
+
+```{r}
+dados[!complete.cases(dados),]
+```
+
+
+```{r}
+counts = table(dados$Vento)
+barplot(counts,main='vento', xlab='vento')
+```
+Tratamento de umidade
+```{r}
+counts = table(dados$Umidade)
+barplot(counts,main='Umidade', xlab='umidade')
+```
+
