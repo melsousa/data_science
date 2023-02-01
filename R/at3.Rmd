@@ -1,0 +1,31 @@
+head e tail
+```{r}
+esoph
+#default 6 linhas
+head(esoph)
+tail(esoph)
+```
+dimensões
+```{r}
+dim(esoph)
+dim(esoph)[1]
+
+```
+```{r}
+colnames(esoph)
+rownames(esoph)
+```
+
+
+```{r}
+summary(esoph)
+```
+
+
+```{r}
+length(esoph)
+```
+```{r}
+x = file.choose()
+```
+

@@ -18,4 +18,23 @@ Tratamento de umidade
 counts = table(dados$Umidade)
 barplot(counts,main='Umidade', xlab='umidade')
 ```
+```{r}
+median(dados$Umidade,na.rm = T)
+dados[is.na(dados$Umidade),]$Umidade = median(dados$Umidade,na.rm = T)
+```
+```{r}
+dados[!complete.cases(dados$Umidade),]
+```
+
+```{r}
+```
+
+
+```{r}
+dados[is.na(dados$Vento), ]$Vento = 'FALSO'
+```
+
+```{r}
+summary(dados$Vento)
+```
 

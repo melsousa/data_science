@@ -1,0 +1,57 @@
+Importanto dados
+```{r}
+dados = read.csv('churn.csv', sep=';', na.strings="", stringsAsFactors = T)
+head(dados)
+summary(dados)
+```
+
+```{r}
+colnames(dados) = c("Id", "Score", "Estado", "Genero", "Idade", "Patrimonio", "Saldo", "Produtos", "TemCartCredito", "Ativo", "Salario", "Saiu")
+head(dados)
+```
+
+Análise explorátorio
+```{r}
+counts = table(dados$Estado)
+barplot(counts, main='Estados', xlab='Estados')
+
+```
+```{r}
+counts = table(dados$Genero)
+barplot(counts, main='GÊneros', xlab='Gêneros')
+```
+explorar, colunas númericas
+```{r}
+summary(dados$Score)
+boxplot(dados$Score)
+hist(dados$Score)
+```
+idade
+```{r}
+summary(dados$Idade)
+boxplot(dados$Idade)
+hist(dados$Idade)
+```
+salário
+```{r}
+summary(dados$Salario)
+boxplot(dados$Salario)
+hist(dados$Salario)
+
+```
+
+valores faltantes - NAs
+```{r}
+dados[!complete.cases(dados),]
+```
+
+tratamento de salário
+```{r}
+#summary(dados$Salario)
+# VER MEDIANA
+median(dados$Salario,na.rm = T)
+#dados$Salario <- NA
+dados[is.na(dados$Salario),]$Salario = median(dados$Salario,na.rm = T)
+#dados[!complete.cases(dados$Salario),]
+```
+

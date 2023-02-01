@@ -1,0 +1,14 @@
+```{r}
+install.packages("openxlsx")
+library(openxlsx)
+```
+texto
+```{r}
+x = read.csv(file.choose(), header = TRUE, sep =',)
+x
+```
+excel
+```{r}
+dados = read.xlsx("credit.xlsx", sheet = 1)
+```
+
